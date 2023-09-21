@@ -10,8 +10,8 @@ server.use(express.json());
 
 // Serve your db.json file
 server.get("/api/data", (req, res) => {
-  const data = require("db.json"); // Assuming db.json is in the same directory
-  res.json(data);
+  const data = require("./db.json"); // Assuming db.json is in the same directory
+  res.send(data);
 });
 
 // Start the Express server
