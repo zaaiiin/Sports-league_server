@@ -1,12 +1,12 @@
 const express = require("express");
-// const cors = require("cors");
+const cors = require("cors");
 const server = express();
 const port = process.env.PORT || 3001;
 
 // Middleware to parse JSON request bodies
 server.use(express.json());
 
-// server.use(cors());
+server.use(cors());
 
 // Serve your db.json file
 server.get("/api/data", (req, res) => {
