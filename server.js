@@ -9,22 +9,26 @@ server.use(express.json());
 // server.use(cors());
 
 // Serve your db.json file
-server.get("/api/data", (req, res) => {
-  // Use fs.readFile to read the JSON file
-  fs.readFile("db.json", (err, data) => {
-    if (err) {
-      console.error("Error reading db.json:", err);
-      res.status(500).send("Error reading db.json");
-    } else {
-      try {
-        const jsonData = JSON.parse(data);
-        res.json(jsonData);
-      } catch (error) {
-        console.error("Error parsing JSON:", error);
-        res.status(500).send("Error parsing json");
-      }
-    }
-  });
+// server.get("/api/data", (req, res) => {
+//   // Use fs.readFile to read the JSON file
+//   fs.readFile("db.json", (err, data) => {
+//     if (err) {
+//       console.error("Error reading db.json:", err);
+//       res.status(500).send("Error reading db.json");
+//     } else {
+//       try {
+//         const jsonData = JSON.parse(data);
+//         res.json(jsonData);
+//       } catch (error) {
+//         console.error("Error parsing JSON:", error);
+//         res.status(500).send("Error parsing json");
+//       }
+//     }
+//   });
+// });
+
+server.get("/", (req, res) => {
+  res.send("Works");
 });
 
 // Start the Express server
