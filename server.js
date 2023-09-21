@@ -14,14 +14,14 @@ server.get("/api/data", (req, res) => {
   fs.readFile("./db.json", (err, data) => {
     if (err) {
       console.error("Error reading db.json:", err);
-      res.status(500).send("Internal Server Error");
+      res.status(500).send("Error reading db.json");
     } else {
       try {
         const jsonData = JSON.parse(data);
         res.json(jsonData);
       } catch (error) {
         console.error("Error parsing JSON:", error);
-        res.status(500).send("Internal Server Error");
+        res.status(500).send("Error parsing json");
       }
     }
   });
