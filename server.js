@@ -27,7 +27,7 @@ server.use(express.json());
 //   });
 // });
 
-server.get("/", (req, res) => {
+server.get("/api/data", (req, res) => {
   res.send("Works");
 });
 
