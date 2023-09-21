@@ -11,7 +11,7 @@ server.use(express.json());
 // Serve your db.json file
 server.get("/api/data", (req, res) => {
   // Use fs.readFile to read the JSON file
-  fs.readFile("./db.json", (err, data) => {
+  fs.readFile("db.json", (err, data) => {
     if (err) {
       console.error("Error reading db.json:", err);
       res.status(500).send("Error reading db.json");
